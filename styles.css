@@ -1,12 +1,13 @@
 /* Basic Styling */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Open Sans', sans-serif; /* Default font */
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
 }
 
 h1, h2 {
+    font-family: 'Roboto', sans-serif; /* Headings font */
     text-align: center;
     margin-top: 20px;
 }
@@ -56,11 +57,13 @@ nav a:hover {
 }
 
 .tool-title {
+    font-family: 'Lobster', cursive; /* Tool titles font */
     font-size: 1.5em;
     margin-bottom: 10px;
 }
 
 .tool-description {
+    font-family: 'Dancing Script', cursive; /* Tool descriptions font */
     margin-bottom: 15px;
 }
 
@@ -78,4 +81,11 @@ nav a:hover {
 
 .download-btn:hover, .back-btn:hover {
     background-color: #218838;
+}
+
+/* Output text font */
+#outputText {
+    font-family: 'Montserrat', sans-serif; /* Output text font */
+    margin-top: 20px;
+    font-size: 2em;
 }
