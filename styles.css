@@ -89,3 +89,30 @@ nav a:hover {
     margin-top: 20px;
     font-size: 2em;
 }
+
+/* Additional Styling for Image Compressor */
+input[type="file"] {
+    margin-bottom: 20px;
+}
+
+#compressedImage {
+    max-width: 100%;
+    margin: 20px 0;
+}
+
+.output-section {
+    display: none; /* Hide output section until an image is uploaded */
+}
+
+.hidden {
+    display: none;
+}
+
+h2 {
+    color: #007bff; /* Color for headings */
+}
+
+.output-section {
+    margin-top: 20px;
+    text-align: center;
+}
