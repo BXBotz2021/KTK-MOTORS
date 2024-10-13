@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Compressor Tool</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&family=Montserrat:wght@400&family=Open+Sans:wght@400&family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -15,13 +15,19 @@
     <div class="container">
         <h2>Image Compressor Tool</h2>
         <p>Upload an image to compress it. Reduce file size while maintaining quality.</p>
+        
+        <!-- Updated File Upload Section -->
+        <label class="file-upload-label" for="uploadImage">Choose File</label>
         <input type="file" id="uploadImage" accept="image/*" />
+        
         <canvas id="imageCanvas" class="hidden"></canvas>
+        
         <div class="output-section">
             <h2>Compressed Image</h2>
-            <img id="compressedImage" alt="Your compressed image will appear here" />
+            <img id="compressedImage" class="compressed-image" alt="Your compressed image will appear here" style="display: none;" />
             <a id="downloadLink" class="download-btn" download="compressed_image.jpg">Download Compressed Image</a>
         </div>
+        
         <button class="back-btn" onclick="window.location.href='index.html'">Back to Home</button>
     </div>
 
