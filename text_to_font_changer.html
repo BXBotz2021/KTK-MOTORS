@@ -3,43 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text to Font Changer Tool</title>
+    <title>Text to Font Changer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto:wght@300;400;500;700&family=Lobster&family=Dancing+Script:wght@400&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav>
         <a href="index.html">Home</a>
+        <a href="image_compressor.html">Image Compressor</a>
+        <a href="text_to_font_changer.html">Text to Font Changer</a>
     </nav>
 
     <div class="container">
-        <h2>Text to Font Changer Tool</h2>
-        <p>Enter your text and select a font style to change its appearance.</p>
-        <input type="text" id="inputText" placeholder="Enter your text here" />
-        <select id="fontSelect">
-            <option value="Arial">Arial</option>
-            <option value="Georgia">Georgia</option>
-            <option value="Courier New">Courier New</option>
-            <option value="Times New Roman">Times New Roman</option>
-            <option value="Verdana">Verdana</option>
-        </select>
-        <div id="outputText" style="margin-top: 20px; font-size: 2em;"></div>
-        <button class="back-btn" onclick="window.location.href='index.html'">Back to Home</button>
+        <h1>Text to Font Changer Tool</h1>
+        <div class="tool-card">
+            <div class="tool-description">
+                <p>Type your text below and choose a font style to see the changes:</p>
+            </div>
+            <input type="text" id="inputText" placeholder="Enter your text here" />
+            <div>
+                <label for="fontSelect">Choose a font:</label>
+                <select id="fontSelect">
+                    <option value="Open Sans">Open Sans</option>
+                    <option value="Roboto">Roboto</option>
+                    <option value="Lobster">Lobster</option>
+                    <option value="Dancing Script">Dancing Script</option>
+                    <option value="Montserrat">Montserrat</option>
+                </select>
+            </div>
+            <button class="download-btn" onclick="convertText()">Convert</button>
+            <div id="outputText"></div>
+        </div>
+        <button class="back-btn" onclick="window.location.href='index.html';">Back to Home</button>
     </div>
 
     <script>
-        // Font Changer Logic
-        const fontSelect = document.getElementById('fontSelect');
-        const inputText = document.getElementById('inputText');
-        const outputText = document.getElementById('outputText');
+        function convertText() {
+            const inputText = document.getElementById("inputText").value;
+            const selectedFont = document.getElementById("fontSelect").value;
 
-        fontSelect.addEventListener('change', changeFontStyle);
-        inputText.addEventListener('input', changeFontStyle);
-
-        function changeFontStyle() {
-            const selectedFont = fontSelect.value;
-            const textValue = inputText.value;
-            outputText.style.fontFamily = selectedFont;
-            outputText.textContent = textValue;
+            const outputDiv = document.getElementById("outputText");
+            outputDiv.textContent = inputText;
+            outputDiv.style.fontFamily = selectedFont; // Apply the selected font
         }
     </script>
 </body>
