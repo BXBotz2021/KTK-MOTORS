@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Compressor Tool</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -13,9 +14,9 @@
 
     <div class="container">
         <h2>Image Compressor Tool</h2>
-        <p>Upload an image to compress it.</p>
+        <p>Upload an image to compress it. Reduce file size while maintaining quality.</p>
         <input type="file" id="uploadImage" accept="image/*" />
-        <canvas id="imageCanvas"></canvas>
+        <canvas id="imageCanvas" class="hidden"></canvas>
         <div class="output-section">
             <h2>Compressed Image</h2>
             <img id="compressedImage" alt="Your compressed image will appear here" />
@@ -60,6 +61,7 @@
                 
                 compressedImage.src = compressedImageURL;
                 downloadLink.href = compressedImageURL;
+                compressedImage.style.display = "block"; // Show compressed image
             };
 
             reader.readAsDataURL(file);
