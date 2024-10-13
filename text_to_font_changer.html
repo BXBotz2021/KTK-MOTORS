@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Font Changer Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+
+    <div class="container">
+        <h2>Text to Font Changer Tool</h2>
+        <p>Enter your text and select a font style to change its appearance.</p>
+        <input type="text" id="inputText" placeholder="Enter your text here" />
+        <select id="fontSelect">
+            <option value="Arial">Arial</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Verdana">Verdana</option>
+        </select>
+        <div id="outputText" style="margin-top: 20px; font-size: 2em;"></div>
+        <button class="back-btn" onclick="window.location.href='index.html'">Back to Home</button>
+    </div>
+
+    <script>
+        // Font Changer Logic
+        const fontSelect = document.getElementById('fontSelect');
+        const inputText = document.getElementById('inputText');
+        const outputText = document.getElementById('outputText');
+
+        fontSelect.addEventListener('change', changeFontStyle);
+        inputText.addEventListener('input', changeFontStyle);
+
+        function changeFontStyle() {
+            const selectedFont = fontSelect.value;
+            const textValue = inputText.value;
+            outputText.style.fontFamily = selectedFont;
+            outputText.textContent = textValue;
+        }
+    </script>
+</body>
+</html>
